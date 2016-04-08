@@ -17,3 +17,22 @@
 	recalc();
 	//doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
+
+window.addEventListener('load', function(){
+	//console.log(2);
+	var slideEle = document.getElementsByClassName('slides')[0];
+	var curindex = 1;
+	var slideshow = setInterval(function(){
+		//console.log(curindex);
+		if(curindex>0){
+			slideEle.children[curindex-1].className = 'slide slide-'+curindex;
+		}
+		slideEle.children[curindex].className = 'slide slide-'+curindex+' current';
+		curindex++;
+		if(curindex>3){
+			slideEle.children[curindex-1].className = 'slide slide-'+curindex;
+			curindex = 0;
+		}
+	},1500);
+
+});
