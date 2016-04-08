@@ -7,17 +7,13 @@
 			if (!clientWidth) return;
 			if(clientWidth/clientHeight > 750/1116){
 				docEl.style.fontSize = 50 * (clientHeight / 558) + 'px';
-				$('.wrapper').addClass('landscape');
 			}else{
-				$('.wrapper').removeClass('landscape');
 				docEl.style.fontSize = 50 * (clientWidth / 375) + 'px';
 			}
 
 		};
 	if (!doc.addEventListener) return;
 	win.addEventListener(resizeEvt, recalc, false);
-	$(function(){
-		recalc();
-	});
+	recalc();
 	//doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);

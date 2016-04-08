@@ -19,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp-concat": "2.6.0"
+    "gulp-concat": "2.6.0",
+    "gulp-copy": "0.0.2",
+    "gulp-watch": "^4.3.5"
   }
 }

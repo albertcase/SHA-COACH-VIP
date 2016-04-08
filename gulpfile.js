@@ -2,43 +2,63 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minify = require('gulp-minify-css'),
     concat = require('gulp-concat'),
+    watch = require('gulp-watch'),
     browserSync = require('browser-sync').create();
+
+var path = {
+    all:['golden-card.html','diamond-card.html','css/*.css','js/*.js','images/*.*'],
+    template:['golden-card.html','diamond-card.html'],
+    css:['css/*.css'],
+    js:['js/*.js'],
+    images:['images/*.*']
+};
 
 // Browser-sync
 gulp.task('browser-sync', function() {
-    browserSync.init({
+    browserSync.init(path.all,{
         server: {
             baseDir: "./",
-            startPath: '/index.html'
+            startPath: 'golden-card.html'
         }
     });
 });
 
-gulp.task('concatjqueryrem', function() {
-    return gulp.src(['js/jquery.min.js','js/rem.js'])
-        .pipe(concat('jrem.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+gulp.task('copy', function(){
+    var start = path.template;
+    return gulp.src(start)
+        //.pipe(watch(start))
+        .pipe(gulp.dest('dist', {
+            start: start
+        }));
 });
 
-gulp.task('concatscriptall', function() {
-    return gulp.src(['js/pre-loader.js','js/marquee.js','js/service.js','js/wxshare.js','js/shake.js', 'js/common.js'])
-        .pipe(concat('all.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+gulp.task('images', function(){
+    var start = path.images;
+    return gulp.src(start)
+        .pipe(gulp.dest('dist/images/', {
+            start: start
+        }));
 });
 
 gulp.task('css', function () {
     // 1. 找到文件
-    gulp.src('css/*.css')
-        .pipe(concat('style.css'))
+    gulp.src(path.css)
+        //.pipe(concat('style.css'))
         // 2. 压缩文件
         .pipe(minify())
         // 3. 另存为压缩文件
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/css/'));
 });
 
-// Default
-//gulp.task('default', ['browser-sync']);
+gulp.task('js', function () {
+    // 1. 找到文件
+    gulp.src(path.js)
+        //.pipe(concat('style.css'))
+        // 2. 压缩文件
+        .pipe(uglify())
+        // 3. 另存为压缩文件
+        .pipe(gulp.dest('dist/js/'));
+});
 
-gulp.task('uf', ['concatjqueryrem','concatscriptall','css']);
+gulp.task('default',['browser-sync']);
+gulp.task('uf', ['copy','css','js','images']);
