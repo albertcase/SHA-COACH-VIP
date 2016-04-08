@@ -1,0 +1,709 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  -webkit-backface-visibility: hidden;
+}
+
+strong {
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.error {
+  position: absolute;
+  display: block;
+  width: 5rem;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -2.5rem;
+  text-align: left;
+}
+
+.qrcode {
+  width: 4.51rem;
+  height: 6.46rem;
+  margin: 1.6rem auto 0;
+  position: relative;
+  z-index: 100;
+}
+
+body {
+  font: 0.24rem/1.5 "SimSun",serif;
+  color: #000000;
+}
+
+.preloading {
+  position: absolute;
+  z-index: 2;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  text-align: center;
+}
+.preloading .inner {
+  width: 4.4rem;
+  height: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.5rem;
+  margin-left: -2.2rem;
+}
+.preloading .l-logo {
+  width: 1.89rem;
+  height: 0.78rem;
+  margin: 0 auto;
+  -webkit-transform: translate(-5px);
+  -moz-transform: translate(-5px);
+  -ms-transform: translate(-5px);
+  -o-transform: translate(-5px);
+  transform: translate(-5px);
+  -webkit-animation: lefttoright linear 2s infinite;
+  -moz-animation: lefttoright linear 2s infinite;
+  animation: lefttoright linear 2s infinite;
+}
+.preloading .icon-loading {
+  margin: 0.2rem auto;
+}
+.preloading .icon-loading span {
+  display: inline-block;
+  width: 0.1rem;
+  height: 0.1rem;
+  background: #848484;
+  margin-right: 0.1rem;
+  border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+}
+.preloading .icon-loading span:nth-child(1) {
+  -webkit-animation: loading 1.5s infinite;
+  -moz-animation: loading 1.5s infinite;
+  animation: loading 1.5s infinite;
+}
+.preloading .icon-loading span:nth-child(2) {
+  -webkit-animation: loading 1.5s infinite 0.5s;
+  -moz-animation: loading 1.5s infinite 0.5s;
+  animation: loading 1.5s infinite 0.5s;
+}
+.preloading .icon-loading span:nth-child(3) {
+  -webkit-animation: loading 1.5s infinite 1s;
+  -moz-animation: loading 1.5s infinite 1s;
+  animation: loading 1.5s infinite 1s;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    background: #000;
+  }
+  66% {
+    background: #848484;
+  }
+}
+@-moz-keyframes loading {
+  0% {
+    background: #000;
+  }
+  66% {
+    background: #848484;
+  }
+}
+@-o-keyframes loading {
+  0% {
+    background: #000;
+  }
+  66% {
+    background: #848484;
+  }
+}
+@keyframes loading {
+  0% {
+    background: #000;
+  }
+  66% {
+    background: #848484;
+  }
+}
+@-webkit-keyframes lefttoright {
+  0% {
+    -webkit-transform: translate(-5px);
+  }
+  50% {
+    -webkit-transform: translate(5px);
+  }
+}
+@-moz-keyframes lefttoright {
+  0% {
+    -moz-transform: translate(-5px);
+  }
+  50% {
+    -moz-transform: translate(5px);
+  }
+}
+@-o-keyframes lefttoright {
+  0% {
+    -o-transform: translate(-5px);
+  }
+  50% {
+    -o-transform: translate(5px);
+  }
+}
+@keyframes lefttoright {
+  0% {
+    -webkit-transform: translate(-5px);
+    transform: translate(-5px);
+  }
+  50% {
+    -webkit-transform: translate(5px);
+    transform: translate(5px);
+  }
+}
+.wrapper {
+  background: url("http://coachxmas.samesamechina.com/img/v2/bg.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.wrapper.landscape {
+  background-size: 100%;
+}
+
+.wrap {
+  z-index: 2;
+  position: absolute;
+  width: 6.16rem;
+  height: 10.10rem;
+  left: 50%;
+  top: 50%;
+  margin-left: -3.08rem;
+  margin-top: -5.05rem;
+  background: #fff;
+  background-size: 100%;
+}
+
+.logo {
+  width: 2.75rem;
+  height: 1.02rem;
+  margin: 0.45rem auto 0rem;
+}
+
+.pin {
+  opacity: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  overflow: hidden;
+  transition: opacity 0.6s;
+  -ms-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  -webkit-transition: opacity 0.6s;
+}
+.pin.current {
+  opacity: 1;
+  z-index: 100;
+}
+.pin .inner {
+  position: absolute;
+  margin: 2.5rem auto 0;
+  width: 100%;
+}
+.pin.pin-2 {
+  background: #f3f3f3;
+}
+.pin.pin-3 {
+  background: #edebee;
+}
+.pin.pin-4 {
+  background: #f1f2f2;
+}
+.pin.pin-6 {
+  background: #f9f8f9;
+}
+
+.buttons {
+  position: relative;
+  width: 5rem;
+  height: 0.86rem;
+  margin: 0.2rem auto 0rem;
+  background: #000;
+  font-size: 0.36rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.86rem;
+}
+.buttons.p1-3 {
+  margin: 0.4rem auto;
+}
+
+.line {
+  width: 4.21rem;
+  height: 0.15rem;
+  margin: 0.3rem auto 0.45rem;
+}
+
+.pin-1 {
+  text-align: center;
+  line-height: 1.2;
+}
+.pin-1 .p1-1 {
+  width: 4.32rem;
+  height: 1.14rem;
+  margin: 0.6rem auto 0.5rem;
+}
+.pin-1 .title {
+  font-weight: normal;
+  font-size: 0.41rem;
+}
+.pin-1 .p1-des {
+  font-size: 0.41rem;
+  margin: 0.2rem auto 0rem;
+}
+.pin-1 .small-font {
+  display: block;
+  margin: 0.2rem auto 0rem;
+}
+.pin-1 .marquee-wrap {
+  margin-top: 0.5rem;
+  background: url("http://coachxmas.samesamechina.com/img/mar2.png") no-repeat;
+  background-size: 100%;
+}
+.pin-1 .p1-2 {
+  position: relative;
+  width: 80%;
+  height: 0.5rem;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+}
+.pin-1 .p1-2 li {
+  display: inline-block;
+  margin: 0px 2px 0px 2px;
+  text-align: left;
+  height: 0.5rem;
+  line-height: 0.4rem;
+  padding: 0.04rem 0 0;
+}
+.pin-1 .p1-5 {
+  position: relative;
+  font-size: 0.28rem;
+}
+
+.pin-2 {
+  text-align: center;
+}
+.pin-2 .p2-shake {
+  margin: 0.6rem auto 0.3rem;
+  width: 0.69rem;
+  height: 0.8rem;
+  -webkit-animation: tada 2s ease 0.2s infinite both;
+  -moz-animation: tada 2s ease 0.2s infinite both;
+  animation: tada 2s ease 0.2s infinite both;
+  -webkit-animation-backface-visibility: hidden;
+  -moz-animation-backface-visibility: hidden;
+  -ms-animation-backface-visibility: hidden;
+  -o-animation-backface-visibility: hidden;
+  animation-backface-visibility: hidden;
+}
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+  }
+}
+@-moz-keyframes tada {
+  0% {
+    -moz-transform: scale(1);
+  }
+  10%, 20% {
+    -moz-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -moz-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -moz-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -moz-transform: scale(1) rotate(0);
+  }
+}
+@-o-keyframes tada {
+  0% {
+    -o-transform: scale(1);
+  }
+  10%, 20% {
+    -o-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -o-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -o-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -o-transform: scale(1) rotate(0);
+  }
+}
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+.pin-2 .p2-1 {
+  margin: 0.4rem auto 0.4rem;
+  width: 6.14rem;
+  height: 5.57rem;
+}
+.pin-2 .p2-t1 {
+  font-size: 0.48rem;
+}
+.pin-2 .p2-2 {
+  font-size: 0.6rem;
+}
+
+.prize {
+  margin-top: 0.5rem;
+  font-size: 0.36rem;
+}
+.prize .p3-t1 {
+  display: block;
+  font-size: 0.56rem;
+}
+
+.pin-3 .prize-2 {
+  display: none;
+}
+.pin-3 .gocoupon {
+  display: none;
+}
+.pin-3.getcoupon {
+  background: #fff;
+}
+.pin-3.getcoupon .prize-2 {
+  display: block;
+}
+.pin-3.getcoupon .prize-2 .p3-1 {
+  text-align: right;
+  width: 6.16rem;
+  height: 5.24rem;
+  margin: 0.2rem auto 0.6rem;
+}
+.pin-3.getcoupon .prize-2 .p3-1 img {
+  width: 6.14rem;
+  height: 5.24rem;
+}
+.pin-3.getcoupon .gocoupon {
+  display: block;
+}
+.pin-3.getcoupon .prize-1 {
+  display: none;
+}
+.pin-3.getcoupon .p3-5 {
+  display: none;
+}
+.pin-3 .p3-1 {
+  position: relative;
+  width: 5.76rem;
+  height: 5.53rem;
+  margin: 0.5rem 0rem 0.2rem -0.05rem;
+}
+
+.pin-4 .p3-1 {
+  margin-top: 0.6rem;
+}
+
+.pin-5 .p4-txt {
+  margin: 0.8rem auto 1.2rem;
+  font-size: 0.4rem;
+}
+.pin-5 .p4-txt strong {
+  display: block;
+}
+
+#form-contact .input-box {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+#form-contact input[type='text'],
+#form-contact input[type='tel'],
+#form-contact .input-phone {
+  width: 5rem;
+  height: 0.8rem;
+  background: #fff;
+  border: #000 1px solid;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  -ms-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  font-size: 0.32rem;
+  color: #331f19;
+  text-indent: 0.6rem;
+}
+#form-contact .btn-submit {
+  margin-top: 1rem;
+}
+
+.pin-6 .p6-1 {
+  width: 6.15rem;
+  height: 4.82rem;
+}
+.pin-6 .p6-2 {
+  margin: 0.9rem auto;
+  font-size: 0.56rem;
+}
+.pin-6 .p6-3 {
+  font-size: 0.3rem;
+}
+.pin-6 .gocoupon {
+  margin-top: 0.9rem;
+}
+
+.pin-7 .inner {
+  margin: 3.5rem auto 0;
+}
+.pin-7 .title {
+  margin-top: 0.3rem;
+  font-size: 0.4rem;
+}
+.pin-7 .content {
+  width: 80%;
+  text-align: left;
+  font-size: 0.24rem;
+  margin: 0.1rem auto 0.2rem;
+}
+.pin-7 .content-wrap {
+  overflow: auto;
+  height: 7.6rem;
+}
+
+.share {
+  display: none;
+  position: absolute;
+  top: 0rem;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(rgba(255, 255, 255, 0.7)));
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, white, rgba(255, 255, 255, 0.7));
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, white, rgba(255, 255, 255, 0.7));
+  /* IE 10 */
+  background: -ms-linear-gradient(top, white, rgba(255, 255, 255, 0.7));
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white, rgba(255, 255, 255, 0.7));
+  text-align: center;
+}
+.share img {
+  width: 4.23rem;
+  height: 1.15rem;
+  margin: 1.8rem auto 0;
+}
+
+.ajaxpop {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-right: 5px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.ajaxpop .loading {
+  position: absolute;
+  width: 2rem;
+  height: 1rem;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.1rem;
+  margin-top: -0.6rem;
+  line-height: 1rem;
+  background: #7C7C7C;
+  padding: 0.2rem;
+  border-radius: 10px;
+  -ms-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+.ajaxpop .icon-loading {
+  display: inline-block;
+  position: relative;
+  width: 0.3rem;
+  height: 0.3rem;
+  margin-right: 4px;
+  vertical-align: middle;
+  border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+}
+.ajaxpop .icon-loading:after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+  -webkit-animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+#__bs_notify__ {
+  display: none !important;
+}
