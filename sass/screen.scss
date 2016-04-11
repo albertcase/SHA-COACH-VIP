@@ -34,6 +34,7 @@ body{
 .slides{
   position: relative;
   @include size(7.5rem,6.16rem);
+  margin: 0 auto;
   background: #f7f7f7;
   .slide{
     position: absolute;

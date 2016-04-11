@@ -93,6 +93,7 @@ body {
   position: relative;
   width: 7.5rem;
   height: 6.16rem;
+  margin: 0 auto;
   background: #f7f7f7;
 }
 .slides .slide {
