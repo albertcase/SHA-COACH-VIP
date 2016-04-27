@@ -21,7 +21,7 @@ class SiteController extends Controller {
 		}
 		$databaseapi = new \Lib\DatabaseAPI();
 		$type = $databaseapi->checkuser($user->openid);
-		$this->render('index', array('type'=>$type));
+		$this->render('site/index', array('type'=>$type));
 		exit;
 	}
 
