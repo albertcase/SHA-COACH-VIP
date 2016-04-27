@@ -23,7 +23,7 @@
         <img class="slide" src="/dist/images/slide-4.png" alt=""/>
     </div>
     <div class="t2">
-        <img src="/dist/images/t2.png" alt=""/>
+        <img src="" alt=""/>
     </div>
     <div class="button">
         <img src="/dist/images/button.png" alt=""/>
@@ -35,9 +35,9 @@
         var priceImgEle = document.getElementById('changeImg');
         if(type==0){
 
-        }else if(type==600){
+        }else if(type=='600'){
             priceImgEle.src=window.location.origin+'/images/t2.png';
-        }else if(type==800){
+        }else if(type=='800'){
             priceImgEle.src=window.location.origin+'/images/t2-800.png';
         }
 
