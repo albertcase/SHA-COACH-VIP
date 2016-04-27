@@ -1,0 +1,892 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+@import "_mixins.scss";
+@import "_animate.scss";
+.animate{
+  animation-duration: 600ms;
+  -webkit-animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+  -webkit-animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+  animation-fill-mode :both;
+  -webkit-animation-fill-mode :both;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.fade{
+  animation-name: fade;
+  -webkit-animation-name: fade;
+}
+@-webkit-keyframes fade
+{
+  0%   {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes fade
+{
+  0%   {opacity:0;}
+  100% {opacity:1;}
+}
+.delay1{
+  animation-delay: 800ms;
+  -webkit-animation-delay: 800ms;
+}
+.delay2{
+  animation-delay: 1600ms;
+  -webkit-animation-delay: 1600ms;
+}
+.delay3{
+  animation-delay: 2400ms;
+  -webkit-animation-delay: 2400ms;
+}
+.delay4{
+  animation-delay: 3200ms;
+  -webkit-animation-delay: 3200ms;
+}
+.delay5{
+  animation-delay: 4000ms;
+  -webkit-animation-delay: 4000ms;
+}
+
+strong{
+  font-weight: bold;
+}
+img{
+  width: 100%;
+}
+.show{
+  display: block !important;
+}
+.hide{
+  display: none !important;
+}
+.error {
+  display: block;
+  width: 100%;
+  color: #d61414;
+  font-size: 0.2rem;
+  text-align: left;
+  margin: 0.1rem auto;
+}
+.btn-close{
+  position: relative;
+  @include size(0.6rem,0.6rem);
+  margin: 0rem auto 0rem;
+  left: -0.1rem;
+  &:after{
+    content: '';
+    display: block;
+    width: 0.8rem;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #c0a176;
+    @include transform(rotate(45deg));
+  }
+  &:before{
+    content: '';
+    display: block;
+    width: 0.8rem;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #c0a176;
+    @include transform(rotate(-45deg));
+  }
+
+}
+
+.slogan{
+  @include size(4.18rem,0.41rem);
+  margin: 0.5rem auto;
+}
+
+body{
+  font:0.24rem/1.5 "Arial",'sans-serif';
+}
+
+//for loading
+.preloading{
+  //display: none;
+  position: absolute;
+  z-index: 2;
+  background: #fff;
+  @include size(100%,100%);
+  top: 0;
+  text-align: center;
+  .inner{
+    @include size(4.4rem,3rem);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.5rem;
+    margin-left: -2.2rem;
+  }
+  .l-logo{
+    @include size(1.89rem,0.78rem);
+    margin: 0 auto;
+    //@include swing($duration:1s,$count:infinite);
+    @include transform(translate(-5px));
+    @include animation(lefttoright linear 2s infinite);
+
+  }
+  .icon-loading{
+    margin:0.2rem auto;
+    span{
+      display: inline-block;
+      @include size(0.1rem,0.1rem);
+      background: #848484;
+      margin-right: 0.1rem;
+      @include vendor-prefix(border-radius,100%);
+
+      &:nth-child(1){
+        @include animation(loading 1.5s infinite);
+      }
+      &:nth-child(2){
+        @include animation(loading 1.5s infinite 0.5s);
+      }
+      &:nth-child(3){
+        @include animation(loading 1.5s infinite 1s);
+      }
+    }
+  }
+}
+@include keyframes(loading){
+  0%{
+    background: #000;
+  }
+  66%{
+    background: #848484;
+  }
+}
+@include keyframes(lefttoright){
+  0%{
+    @include transform(translate(-5px));
+  }
+  50%{
+    @include transform(translate(5px));
+  }
+}
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  &.landscape{
+    background-size: 100%;
+  }
+}
+
+//for btn-sprite
+.btn-sprite{
+  display: inline-block;
+  background:#000 url("../images/btn-sprite.png") no-repeat;
+  background-size: 100%;
+  width: 2.39rem;
+  height: 0.57rem;
+  border: #000 1px solid;
+  &.btn-gogallery{
+
+  }
+  &.btn-filltext{
+    background-position: 0 -0.87rem;
+  }
+  &.btn-back{
+    background-position: 0 -2rem;
+  }
+  &.btn-submit{
+    background-position: 0 -4.25rem;
+  }
+  &.btn-joinplay{
+    background-position: 0 100%;
+  }
+  &.btn-like{
+    background-position: 0 -3.15rem;
+  }
+}
+
+//for photo-frame
+.photo-wrap{
+  //@include size(6.45rem,8.2rem);
+  //margin: 0 auto;
+  //background: #f0f0f0;
+}
+.photo{
+  position: relative;
+  @include size(6.4rem,8.28rem);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  &.photo-1{
+    background-image: url("../images/show-1.png");
+  }
+  &.photo-2{
+    background-image: url("../images/show-2.png");
+  }
+  &.photo-3{
+    background-image: url("../images/show-3.png");
+  }
+  &.photo-4{
+    background-image: url("../images/show-4.png");
+  }
+  &.photo-5{
+    background-image: url("../images/show-5.png");
+  }
+  .num{
+    color: #140304;
+    font-size: 0.82rem;
+    bottom: 1.2rem;
+    position: absolute;
+    left: 2.4rem;
+    @include transform(rotate(20deg));
+  }
+  .leave-words{
+    position: absolute;
+    @include size(4rem,2rem);
+    -webkit-appearance: none;
+    border: none;
+    background: transparent;
+    resize: none;
+    padding: 6px;
+    box-sizing: border-box;
+    @include transform(rotate(-16deg));
+  }
+}
+.photo-frame{
+  //@include size(7.5rem,8.71rem);
+  margin: 0 auto;
+  overflow: hidden;
+  #input-tomom{
+
+  }
+  .leave-words{
+    top: 1.6rem;
+    left: 0.3rem;
+    text-align: center;
+    font-size: 0.26rem;
+    color: #000;
+    overflow: hidden;
+  }
+}
+
+.photo-wrap{
+  position: relative;
+}
+.block-photo{
+  @include size(4.2rem,4.2rem);
+  background: #f4f0eb;
+  position: absolute;
+  bottom: 0.3rem;
+  right: 0.3rem;
+  @include transform(rotate(20deg));
+  @include vendor-prefix(box-shadow,3px 1px 6px #999);
+  box-sizing: border-box;
+  .p-inner{
+    background: #fff;
+    display: block;
+    width: 3.6rem;
+    height: 3.6rem;
+    position: absolute;
+    left: 0.3rem;
+    top: 0.3rem;
+    @include vendor-prefix(box-shadow,0px 0px 9px #ccc);
+  }
+}
+
+textarea::-webkit-input-placeholder {color: #333;}
+textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #3a0c0a;
+}
+textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #3a0c0a;
+}
+textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #3a0c0a;
+}
+
+//for pin
+.pin {
+  //display: none;
+  opacity: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  overflow: hidden;
+  @include vendor-prefix(transition,opacity 0.6s);
+  animation-duration: 600ms;
+  -webkit-animation-duration: 600ms;
+  &.current{
+    //display: block;
+    opacity: 1;
+    z-index: 100;
+  }
+  .inner{
+    position: absolute;
+    margin: 2.5rem auto 0;
+    //margin: 125px auto 0;
+    width: 100%;
+  }
+}
+
+
+//for .pin-1
+.pin-1{
+  .p1-1{
+    @include size(5.71rem,0.42rem);
+    margin: 0.4rem auto;
+  }
+  .kv{
+    @include size(6.4rem,6.4rem);
+    margin: 0rem auto 0.6rem;
+  }
+  .p1-t1{
+    margin: 0rem auto 0.8rem;
+    @include size(5.46rem,1.26rem);
+  }
+  .btn-sprite{
+    //margin: 0rem auto 0.2rem;
+  }
+  .btn-gogallery{
+    margin-right: 0.2rem;
+  }
+
+}
+
+//for .pin-2
+.canvas-container{
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+  z-index: 100;
+}
+.pin-2{
+  .p1-1{
+    @include size(5.71rem,0.42rem);
+    margin: 0.4rem auto;
+  }
+  .buttons{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1.47rem;
+    padding-top:0.7rem;
+    background: #fff;
+    .btn-sprite{
+      display: inline-block;
+      margin: 0 0.2rem 0;
+    }
+  }
+  #capture{
+    display: block;
+    @include size(0,0);
+    overflow: hidden;
+  }
+  .btn-camera{
+    position: relative;
+    z-index: 101;
+    font-size: 0.27rem;
+    .icon{
+      display: block;
+      position: relative;
+      @include size(0.6rem,0.6rem);
+      margin: 0.7rem auto 0.4rem;
+      &:before,&:after{
+        position: absolute;
+        top: 0;
+        display: block;
+        content: '';
+        background: #000;
+      }
+      &:before{
+        @include size(0.6rem,0.02rem);
+        top: 50%;
+      }
+      &:after{
+        @include size(0.02rem,0.6rem);
+        left: 50%;
+      }
+    }
+  }
+
+}
+
+
+//for pin-3
+input[type='text'],
+input[type='tel']{
+  border: #353535 1px solid;
+  border-radius: 5px;
+  padding: 0.1rem;
+}
+
+.logo{
+  @include size(3.49rem,1.31rem);
+  margin: 0.2rem auto;
+}
+.line-1{
+  width: 90vw;
+  height: 2px;
+  background: #000;
+  border: none;
+  margin: 0.3rem auto;
+}
+.line-2{
+  width: 90vw;
+  height: 0px;
+  border-top: none;
+  border-bottom:#bebebe 2px dotted;
+  margin: 0.3rem auto;
+}
+.pin-3{
+  .info{
+    @include size(4.21rem,0.59rem);
+    margin: 0 auto;
+  }
+  .form-btn{
+    @include size(2.9rem,0.8rem);
+    background: url("../images/form-btn.png") no-repeat;
+    background-size: 100%;
+  }
+  .form-validate{
+    width: 6rem;
+    margin: 0 auto;
+    .input-box{
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+    .file-title{
+      display: block;
+      @include size(2.07rem,0.4rem);
+      margin: 0.4rem 0 0.2rem;
+      background: url("../images/title.png") no-repeat;
+      background-size: 100%;
+      &.fill-keycode{
+        background-position: 0 58%;
+      }
+    }
+    .input-phone{
+      height: 0.5rem;
+      margin-right: 0.1rem;
+      margin-left: 0.1rem;
+    }
+    .btn-getkeycode{
+      float: left;
+      display: inline-block;
+      //background-position: 0 100%;
+      border: none;
+      padding: 0;
+      position: absolute;
+      right: -0.6rem;
+      &.disabled{
+        opacity: 0.4;
+      }
+    }
+    .input-keycode{
+      height: 0.5rem;
+      float: left;
+      margin-left: 0.1rem;
+      width: 5.5rem;
+    }
+  }
+  .form-btn-submit{
+    background-position: 0 100%;
+    background-size: 100%;
+    margin: 0.2rem auto;
+  }
+}
+
+
+//for pin-4
+.pin-4{
+  .info{
+    @include size(3.36rem,0.65rem);
+    margin: 0 auto;
+  }
+  .file-title{
+    display: block;
+    @include size(2.07rem,0.4rem);
+    background: url("../images/title.png") no-repeat;
+    background-size: 100%;
+    background-position: 0 100%;
+
+  }
+  input[type='text']{
+    height: 0.5rem;
+    padding: 1vw;
+  }
+  .form-info{
+    width: 90vw;
+    margin: 0 auto;
+    .input-box{
+      position: relative;
+      //width: 32vw;
+      margin: 1vh 0;
+      padding-left: 10vw;
+      box-sizing: border-box;
+      >label{
+        //width: 5vw;
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+        width: 10vw;
+      }
+    }
+    .input-box-surname{
+      float: left;
+      width: 44vw;
+      .input-surname{
+        width: 30vw;
+      }
+    }
+    .input-box-name{
+      float: right;
+      width: 44vw;
+      .input-name{
+        width: 30vw;
+      }
+    }
+    .input-mobile{
+      width: 76vw;
+      background: #ccc;
+    }
+    .input-box-gender{
+      clear: both;
+      position: relative;
+      margin: 0.2rem 0;
+      padding-top: 0.2rem;
+      .label-gender{
+
+      }
+      .radio-collection{
+        width: 42vw;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .radio-inline{
+        float: left;
+        display: inline-block;
+        width: 20vw;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        border: #474747 1px solid;
+        border-radius: 3px 0px 0px 3px;
+        text-align: center;
+        color: #000;
+        &.actived{
+          color: #fff;
+          background: #000;
+        }
+      }
+      .radio-inline-2{
+        border-radius: 0px 3px 3px 0px;
+        border-left: none;
+      }
+
+      input[name='gender']{
+        opacity: 0;
+        //-webkit-appearance: none;
+        width: 0;
+        height: 0;
+        //display: block;
+        //padding: 0;
+        //margin: 0;
+        //&.actived{
+        //  background: #000;
+        //}
+        &:focus{
+          border: none;
+          outline: none;
+        }
+      }
+    }
+    .input-box-email{
+      .input-email-pre{
+        width: 45vw;
+      }
+      .input-email-after{
+        width: 23vw;
+      }
+    }
+  }
+  .form-btn-submit{
+    @include size(2.9rem,0.9rem);
+    background: url("../images/form-btn.png") 0 100% no-repeat;
+    background-size: 100%;
+    margin: 0.3rem auto;
+  }
+  .terms{
+    color: #a4a4a4;
+    a{
+      color: #000;
+    }
+  }
+}
+
+//for pin-5
+.pin-5{
+  .coupon{
+    display: block;
+    @include size(6.94rem,3.21rem);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,-50%));
+  }
+}
+
+.qrcode-pop{
+  .inner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%,-50%));
+    .qrcode{
+      @include size(3.15rem,3.15rem);
+      margin: 0rem auto 0.5rem;
+    }
+    .qrcode-text{
+      @include size(4.49rem,0.88rem);
+      margin: 0 auto;
+    }
+  }
+
+}
+.share-pop{
+  .share-1{
+    float: right;
+    @include size(6.29rem,3.91rem);
+    margin-top: 0.4rem;
+    margin-right: 0.2rem;
+  }
+}
+
+
+
+
+//for ajax loading
+.ajaxpop{
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-right: 5px;
+  .loading{
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.1rem;
+    margin-top: -0.6rem;
+    line-height: 1rem;
+    background: rgba(0,0,0,0.8);
+    padding: 0.2rem;
+    @include vendor-prefix(border-radius,10px);
+    text-align: center;
+    color: #fff;
+  }
+  .icon-loading{
+    display: inline-block;
+    position: relative;
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-right: 4px;
+    vertical-align: middle;
+    @include vendor-prefix(border-radius,100%);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    &:after{
+      content: '';
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      bottom: -3px;
+      left: -3px;
+      @include vendor-prefix(border-radius,100%);
+      border: 3px solid transparent;
+      border-top-color: #fff;
+      -webkit-animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@include keyframes(spin){
+  0%{
+    @include transform(rotate(0deg));
+  }
+  100%{
+    @include transform(rotate(360deg));
+  }
+}
+
+//for tips-pop
+.popup{
+  position: absolute;
+  z-index: 101;
+  background: rgba(0,0,0,0.85);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  &.qrcode-pop{
+    background: rgba(255,255,255,0.6);
+  }
+}
+.tips-pop{
+  .inner{
+    position: absolute;
+    @include size(3.96rem,1.71rem);
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%,-50%));
+  }
+  .tips-1{
+    @include size(4rem,0.75rem);
+    background: url("../images/tips.png") no-repeat;
+    background-size: 100%;
+  }
+  .btn-tips{
+    @include size(1.8rem,0.5rem);
+    float: left;
+    display: inline-block;
+    margin-left: 0.1rem;
+    background: url("../images/tips.png") no-repeat;
+    background-size: 200%;
+    background-position: 0% 100%;
+    &.btn-tips-no{
+      background-position: 100% 100%;
+    }
+  }
+  .tips-text{
+    @include size(1.91rem,0.29rem);
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0.2rem;
+  }
+}
+
+//for gallery page
+.pin-gallery{
+  overflow-y:auto;
+}
+//for top banner
+.top-banner{
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,0.7);
+  width: 100%;
+  .user-name{
+    display: inline-block;
+    float: left;
+    margin-left: 0.1rem;
+  }
+  .icon-good{
+    float: right;
+    margin-right: 0.1rem;
+    &.notlike{
+      &:after{
+        background-position: 0 100%;
+      }
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      @include size(0.27rem,0.27rem);
+      background: url("../images/icon-sprite.png") no-repeat;
+      background-size: 100%;
+      position: relative;
+      top: 0.08rem;
+      margin-left: 0.1rem;
+    }
+  }
+}
+.gallery-list{
+  //height: 85vh;
+  //overflow: auto;
+  text-align: center;
+  .item{
+    position: relative;
+    display: inline-block;
+    //@include size(3.2rem,4.14rem);
+    margin: 0.2rem;
+    .photo{
+      @include size(3.2rem,4.14rem);
+      .leave-words{
+        top: 0.8rem;
+        left: 0.15rem;
+        width: 2rem;
+        height: 1rem;
+        padding: 3px;
+        font-size: 0.15rem;
+      }
+    }
+    .writing-words{
+
+    }
+    .block-photo{
+      @include size(2.1rem,2.1rem);
+      .p-inner{
+        @include size(1.8rem,1.8rem);
+        left: 0.15rem;
+        top: 0.15rem;
+      }
+      img{
+        @include size(100%,100%);
+      }
+    }
+  }
+  //.photo{
+  //  @include size(3.28rem,3.80rem);
+  //}
+}
+
+//for pin photo
+.pin-photo{
+  .photo-wrap{
+    @include size(6.4rem,auto);
+    margin: 0 auto;
+  }
+  .top-banner{
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.26rem;
+    font-family: "Arial",sans-serif;
+    font-weight: bold;
+  }
+}
+
+
+//test
+#__bs_notify__{
+  display: none !important;
+}
