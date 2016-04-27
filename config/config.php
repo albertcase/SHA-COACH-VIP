@@ -21,7 +21,7 @@ define("CURIO_JS_ID", '912e9ed6-7426-49c0-98f2-903fa4bf0d7a');
 //Database config info
 define("DBHOST", '127.0.0.1');
 define("DBUSER", 'root');
-define("DBPASS", '');
+define("DBPASS", '1qazxsw2');
 define("DBNAME", 'coach_vip');
 
 
