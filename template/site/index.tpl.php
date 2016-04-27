@@ -60,7 +60,7 @@
                         wx.addCard({
                             cardList: [{
                                 cardId: cardListJSON[i-1].cardId,
-                                cardExt: '{"timestamp":"'+cardListJSON[i-1].cardExt.timestamp+'","signature":"'+cardListJSON[i-1].cardExt.signature+'","openid":"'+cardListJSON[i-1].cardExt.openid+'"}'
+                                cardExt: '{"timestamp":"'+cardListJSON[i-1].cardExt.timestamp+'","signature":"'+cardListJSON[i-1].cardExt.signature+'","openid":"'+cardListJSON[i-1].cardExt.openid+'","code":"'+cardListJSON[i-1].cardExt.code+'"}'
                             }],
                             success: function(res) {
                                 var cardList = res.cardList;
