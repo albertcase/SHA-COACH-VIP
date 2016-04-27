@@ -36,12 +36,14 @@ class WechatAPI {
   }
 
   public function cardList($cardid){
+    $UserAPI = new \Lib\UserAPI();
+    $user = $UserAPI->userLoad(true);
     $api_url = 'http://coach.samesamechina.com/v2/wx/card/js/add/json?access_token='. CURIO_TOKEN;
     // 参数数组
     $data[] = array(
             'card_id' => $cardid,
             'code' => '',
-            'openid' => ''
+            'openid' => $user->openid
     );
      
     $ch = curl_init ();
