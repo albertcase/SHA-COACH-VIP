@@ -68,4 +68,16 @@ class DatabaseAPI extends Base {
 		return NULL;
 	}
 
+	public function checkuser($openid) {
+		$sql = "SELECT `type` FROM `coach_vip` WHERE `openid` = ?"; 
+		$res = $this->db->prepare($sql);
+		$res->bind_param("s", $openid);
+		$res->execute();
+		$res->bind_result($type);
+		if($res->fetch()) {
+			return $type;
+		}
+		return 0;
+	}
+
 }
