@@ -14,7 +14,7 @@
 <body>
 <div class="wrapper">
     <div class="t1">
-        <img src="/dist/images/t1.png" alt=""/>
+        <img src="/dist/images/t1.png" id="titleImg" alt=""/>
     </div>
     <div class="slides">
         <img class="slide current" src="/dist/images/slide-1.png" alt=""/>
@@ -33,12 +33,15 @@
     var type='<?php echo $type;?>';
     $(document).ready(function() {
         var priceImgEle = document.getElementById('changeImg');
-        if(type==0){
-
-        }else if(type=='600'){
+        var titleImg = document.getElementById('titleImg');
+        if (type=='600') {
             priceImgEle.src=window.location.origin+'/images/t2.png';
-        }else if(type=='800'){
+            titleImg.src=window.location.origin+'/images/t1.png';
+        } else if (type=='800') {
             priceImgEle.src=window.location.origin+'/images/t2-800.png';
+            titleImg.src=window.location.origin+'/images/t1-800.png';
+        } else {
+
         }
 
         var enabled =true;
