@@ -45,8 +45,19 @@ class ApiController extends Controller {
 	public function cardAction() {
 		//600 pKCDxjrwNnpwUXTcyqzi2R3NZRCQ
 		//800 pKCDxjm3GDEKbK19j_SH7VqFAaag
+		$card = array('600'=>'pKCDxjrwNnpwUXTcyqzi2R3NZRCQ', '800'=>'pKCDxjm3GDEKbK19j_SH7VqFAaag');
+		$UserAPI = new \Lib\UserAPI();
+		$user = $UserAPI->userLoad(true);
+		if (!$user) {
+			return $this->statusPrint(0, '未登录');
+		}
+		$databaseapi = new \Lib\DatabaseAPI();
+		$type = $databaseapi->checkuser($user->openid);
+		if (!$type) {
+			return $this->statusPrint(2, '非VIP');
+		}
 		$wechatapi = new \Lib\WechatAPI();
-		$list = $wechatapi->cardList('pKCDxjrwNnpwUXTcyqzi2R3NZRCQ');
+		$list = $wechatapi->cardList($card[$type]);
 		return $this->statusPrint(1, $list);
 	}
 
