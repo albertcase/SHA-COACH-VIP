@@ -7,12 +7,13 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" type="text/css" href="css/screen.css"/>
+    <script type="text/javascript" src="js/lib/zepto.min.js"></script>
     <script type="text/javascript" src="js/rem.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="t1">
-            <img src="images/t1.png" alt=""/>
+            <img src="images/t1.png" id="titleImg" alt=""/>
         </div>
         <div class="slides">
             <img class="slide current" src="images/slide-1.png" alt=""/>
@@ -28,15 +29,59 @@
         </div>
     </div>
     <script type="text/javascript">
-        var type=0;
-        var priceImgEle = document.getElementById('changeImg');
-        if(type==0){
+        var type='800';
+        $(document).ready(function() {
+            var priceImgEle = $('#changeImg');
+            var titleImg = $('#titleImg');
+            if (type=='600') {
+                priceImgEle.attr('src',window.location.origin+'/images/t2.png');
+                titleImg.attr('src',window.location.origin+'/images/t1.png');
+            } else if (type=='800') {
+                priceImgEle.attr('src',window.location.origin+'/images/t2-800.png');
+                titleImg.attr('src',window.location.origin+'/images/t1-800.png');
+            } else {
 
-        }else if(type==1){
-            priceImgEle.src=window.location.origin+'/images/t2.png';
-        }else if(type==2){
-            priceImgEle.src=window.location.origin+'/images/t2-800.png';
-        }
+            }
+
+            var enabled =true;
+            $('.button').on('click',function(){
+                if(!enabled) return;
+                enabled=false;
+                $.ajax({
+                    url:'/api/card',
+                    type:'POST',
+                    dataType:'json',
+                    success:function(data){
+                        enabled=true;
+                        if(data.status){
+                            var cardListJSON = data.msg;
+                            wx.addCard({
+                                cardList: [{
+                                    cardId: cardListJSON[i-1].cardId,
+                                    cardExt: '{"timestamp":"'+cardListJSON[i-1].cardExt.timestamp+'","signature":"'+cardListJSON[i-1].cardExt.signature+'"}'
+                                }],
+                                success: function(res) {
+                                    var cardList = res.cardList;
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                fail: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                complete: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                cancel: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                trigger: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

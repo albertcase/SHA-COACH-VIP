@@ -32,14 +32,14 @@
 <script type="text/javascript">
     var type='<?php echo $type;?>';
     $(document).ready(function() {
-        var priceImgEle = document.getElementById('changeImg');
-        var titleImg = document.getElementById('titleImg');
+        var priceImgEle = $('#changeImg');
+        var titleImg = $('#titleImg');
         if (type=='600') {
-            priceImgEle.src=window.location.origin+'/images/t2.png';
-            titleImg.src=window.location.origin+'/images/t1.png';
+            priceImgEle.attr('src',window.location.origin+'/images/t2.png');
+            titleImg.attr('src',window.location.origin+'/images/t1.png');
         } else if (type=='800') {
-            priceImgEle.src=window.location.origin+'/images/t2-800.png';
-            titleImg.src=window.location.origin+'/images/t1-800.png';
+            priceImgEle.attr('src',window.location.origin+'/images/t2-800.png');
+            titleImg.attr('src',window.location.origin+'/images/t1-800.png');
         } else {
 
         }
