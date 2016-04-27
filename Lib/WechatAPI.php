@@ -43,7 +43,7 @@ class WechatAPI {
     $data[] = array(
             'card_id' => $cardid,
             'code' => '',
-            'openid' => $user->openid
+            'openid' => ''
     );
      
     $ch = curl_init ();
