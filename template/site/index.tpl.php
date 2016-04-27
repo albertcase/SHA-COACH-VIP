@@ -56,6 +56,7 @@
                     enabled=true;
                     if(data.status){
                         var cardListJSON = data.msg;
+                        var i=1;
                         wx.addCard({
                             cardList: [{
                                 cardId: cardListJSON[i-1].cardId,
