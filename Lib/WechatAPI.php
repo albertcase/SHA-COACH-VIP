@@ -42,7 +42,7 @@ class WechatAPI {
     // 参数数组
     $data[] = array(
             'card_id' => $cardid,
-            'code' => '',
+            'code' => 'SS001',
             'openid' => $user->openid
     );
      
