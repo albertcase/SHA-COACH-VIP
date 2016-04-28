@@ -42,7 +42,7 @@ class WechatAPI {
     // 参数数组
     $data[] = array(
             'card_id' => $cardid,
-            'code' => 'SS001',
+            'code' => 'S1605' . sprintf("%04d", $user->id),
             'openid' => $user->openid
     );
      
