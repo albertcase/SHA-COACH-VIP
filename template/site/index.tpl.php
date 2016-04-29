@@ -23,7 +23,7 @@
         <img class="slide" src="/dist/images/slide-4.png" alt=""/>
     </div>
     <div class="t2">
-        <img src="" alt=""/>
+        <img src="" id = "changeImg" alt=""/>
     </div>
     <div class="button">
         <img src="/dist/images/button.png" alt=""/>
@@ -37,52 +37,92 @@
         if (type=='600') {
             priceImgEle.attr('src',window.location.origin+'/images/t2.png');
             titleImg.attr('src',window.location.origin+'/images/t1.png');
+            var enabled =true;
+            $('.button').on('click',function(){
+                if(!enabled) return;
+                enabled=false;
+                $.ajax({
+                    url:'/api/card',
+                    type:'POST',
+                    dataType:'json',
+                    success:function(data){
+                        enabled=true;
+                        if(data.status){
+                            var cardListJSON = data.msg;
+                            var i=1;
+                            wx.addCard({
+                                cardList: [{
+                                    cardId: cardListJSON[i-1].cardId,
+                                    cardExt: '{"timestamp":"'+cardListJSON[i-1].cardExt.timestamp+'","signature":"'+cardListJSON[i-1].cardExt.signature+'","openid":"'+cardListJSON[i-1].cardExt.openid+'","code":"'+cardListJSON[i-1].cardExt.code+'"}'
+                                }],
+                                success: function(res) {
+                                    var cardList = res.cardList;
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                fail: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                complete: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                cancel: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                trigger: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                }
+                            });
+                        }
+                    }
+                });
+            });
         } else if (type=='800') {
             priceImgEle.attr('src',window.location.origin+'/images/t2-800.png');
             titleImg.attr('src',window.location.origin+'/images/t1-800.png');
+            var enabled =true;
+            $('.button').on('click',function(){
+                if(!enabled) return;
+                enabled=false;
+                $.ajax({
+                    url:'/api/card',
+                    type:'POST',
+                    dataType:'json',
+                    success:function(data){
+                        enabled=true;
+                        if(data.status){
+                            var cardListJSON = data.msg;
+                            var i=1;
+                            wx.addCard({
+                                cardList: [{
+                                    cardId: cardListJSON[i-1].cardId,
+                                    cardExt: '{"timestamp":"'+cardListJSON[i-1].cardExt.timestamp+'","signature":"'+cardListJSON[i-1].cardExt.signature+'","openid":"'+cardListJSON[i-1].cardExt.openid+'","code":"'+cardListJSON[i-1].cardExt.code+'"}'
+                                }],
+                                success: function(res) {
+                                    var cardList = res.cardList;
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                fail: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                complete: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                cancel: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                },
+                                trigger: function(res) {
+                                    //alert(JSON.stringfiy(res));
+                                }
+                            });
+                        }
+                    }
+                });
+            });
         } else {
 
         }
 
-        var enabled =true;
-        $('.button').on('click',function(){
-            if(!enabled) return;
-            enabled=false;
-            $.ajax({
-                url:'/api/card',
-                type:'POST',
-                dataType:'json',
-                success:function(data){
-                    enabled=true;
-                    if(data.status){
-                        var cardListJSON = data.msg;
-                        var i=1;
-                        wx.addCard({
-                            cardList: [{
-                                cardId: cardListJSON[i-1].cardId,
-                                cardExt: '{"timestamp":"'+cardListJSON[i-1].cardExt.timestamp+'","signature":"'+cardListJSON[i-1].cardExt.signature+'","openid":"'+cardListJSON[i-1].cardExt.openid+'","code":"'+cardListJSON[i-1].cardExt.code+'"}'
-                            }],
-                            success: function(res) {
-                                var cardList = res.cardList;
-                                //alert(JSON.stringfiy(res));
-                            },
-                            fail: function(res) {
-                                //alert(JSON.stringfiy(res));
-                            },
-                            complete: function(res) {
-                                //alert(JSON.stringfiy(res));
-                            },
-                            cancel: function(res) {
-                                //alert(JSON.stringfiy(res));
-                            },
-                            trigger: function(res) {
-                                //alert(JSON.stringfiy(res));
-                            }
-                        });
-                    }
-                }
-            });
-        });
+        
     });
 </script>
 </body>

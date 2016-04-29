@@ -22,6 +22,12 @@ class ApiController extends Controller {
 
 
 	public function callbackAction() {
+		$user_agent = $_SERVER['HTTP_USER_AGENT'];
+		if (strpos($user_agent, 'MicroMessenger') === false) {
+		    // 非微信浏览器禁止浏览
+		    echo "HTTP/1.1 401 Unauthorized";
+		    exit;
+		}
 		$request = $this->Request();
 		$fields = array(
 			'openid' => array('notnull', '3')
