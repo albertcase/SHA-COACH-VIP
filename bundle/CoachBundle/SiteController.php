@@ -6,7 +6,7 @@ use Core\Controller;
 
 class SiteController extends Controller {
 
-	public function indexAction() {	
+	public function indexAction() {
 		$UserAPI = new \Lib\UserAPI();
 		$user = $UserAPI->userLoad(true);
 		if (!$user) {
