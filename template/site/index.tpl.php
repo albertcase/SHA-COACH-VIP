@@ -26,10 +26,10 @@
         <img src="/dist/images/t1.png" id="titleImg" alt=""/>
     </div>
     <div class="slides">
-        <img class="slide current" src="/dist/images/slide-1.png" alt=""/>
-        <img class="slide" src="/dist/images/slide-2.png" alt=""/>
-        <img class="slide" src="/dist/images/slide-3.png" alt=""/>
-        <img class="slide" src="/dist/images/slide-4.png" alt=""/>
+        <img class="slide current" src="/dist/images/slide/birthdaycoupon_postslice-1.jpg" alt=""/>
+        <img class="slide" src="/dist/images/slide/birthdaycoupon_postslice-2.jpg" alt=""/>
+        <img class="slide" src="/dist/images/slide/birthdaycoupon_postslice-3.jpg" alt=""/>
+        <img class="slide" src="/dist/images/slide/birthdaycoupon_postslice-4.jpg" alt=""/>
     </div>
     <div class="t2">
         <img src="" id = "changeImg" alt=""/>
