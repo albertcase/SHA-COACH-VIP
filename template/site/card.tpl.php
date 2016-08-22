@@ -10,10 +10,13 @@
     <script type="text/javascript" src="/dist/js/lib/zepto.min.js"></script>
 </head>
 <body>
+    <input type="button" id="card" value="卡券">
 <script type="text/javascript">
 var cardListJSON = <?php echo json_encode($list);?>;
 $(document).ready(function() {
-    wx.addCard({
+    $("#card").click(function(){
+
+        wx.addCard({
         cardList: [{
             cardId: cardListJSON[0].cardId,
             cardExt: '{"timestamp":"'+cardListJSON[0].cardExt.timestamp+'","signature":"'+cardListJSON[0].cardExt.signature+'","openid":"'+cardListJSON[0].cardExt.openid+'","code":"'+cardListJSON[0].cardExt.code+'"}'
@@ -35,6 +38,11 @@ $(document).ready(function() {
             //alert(JSON.stringfiy(res));
         }
     });
+    })
+        
+
+}
+    
 });
 </script>
 </body>
