@@ -8,7 +8,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/912e9ed6-7426-49c0-98f2-903fa4bf0d7a/wechat"></script>
     <script type="text/javascript" src="/dist/js/lib/zepto.min.js"></script>
-    <script type="text/javascript" src="/dist/js/rem.js"></script>
 </head>
 <body>
 <script type="text/javascript">
