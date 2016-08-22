@@ -10,15 +10,8 @@
     <script type="text/javascript" src="/dist/js/lib/zepto.min.js"></script>
 </head>
 <body>
-    <input type="button" id="card" value="卡券">
 <script type="text/javascript">
 var cardListJSON = <?php echo json_encode($list);?>;
-
-    $("#card").click(function(){
-
-       showcard()
-    })
- 
 setTimeout("showcard()",100);
 function showcard() {
      wx.addCard({
