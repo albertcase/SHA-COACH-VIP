@@ -10,7 +10,7 @@
 </head>
 <body>
 <script type="text/javascript">
-var cardListJSON = <?php echo json_encode($list);?>
+var cardListJSON = <?php echo json_encode($list);?>;
 wx.addCard({
     cardList: [{
         cardId: cardListJSON[0].cardId,
