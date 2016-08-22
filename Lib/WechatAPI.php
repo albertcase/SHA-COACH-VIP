@@ -40,11 +40,21 @@ class WechatAPI {
     $user = $UserAPI->userLoad(true);
     $api_url = 'http://coach.samesamechina.com/v2/wx/card/js/add/json?access_token='. CURIO_TOKEN;
     // 参数数组
-    $data[] = array(
+    if (!$user) {
+        $data[] = array(
+            'card_id' => $cardid,
+            'code' => '',
+            'openid' => ''
+        );
+    } else {
+       $data[] = array(
             'card_id' => $cardid,
             'code' => 'S'. date("ym") . sprintf("%04d", $user->id),
             'openid' => $user->openid
-    );
+        );
+
+    }
+   
      
     $ch = curl_init ();
     // print_r($ch);
