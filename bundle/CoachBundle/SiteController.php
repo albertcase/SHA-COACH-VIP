@@ -25,4 +25,16 @@ class SiteController extends Controller {
 		exit;
 	}
 
+	public function cardAction() {
+		//600 pKCDxjrwNnpwUXTcyqzi2R3NZRCQ
+		//800 pKCDxjm3GDEKbK19j_SH7VqFAaag
+		$card = 'pKCDxjovWJyOM64_yoYnlWnBh6RY';
+		//$card = array('600'=>'pGXbRsjjVihQHceLiRMgpFWDkNtU', '800'=>'pGXbRssyzDNSGX7qa6D689Vi_700');
+		//$card = array('600'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ', '800'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ');
+	
+		$wechatapi = new \Lib\WechatAPI();
+		$list = $wechatapi->cardList($card);
+		$this->render('site/card', array('list'=>$list));
+		exit;
+	}
 }
