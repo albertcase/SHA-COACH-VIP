@@ -19,7 +19,7 @@ var cardListJSON = <?php echo json_encode($list);?>;
        showcard()
     })
  
-
+showcard();
 function showcard() {
      wx.addCard({
         cardList: [{
