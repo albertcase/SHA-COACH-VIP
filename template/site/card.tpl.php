@@ -34,7 +34,7 @@ $(document).ready(function() {
             //alert(JSON.stringfiy(res));
         }
     });
-}
+});
 </script>
 </body>
 </html>
