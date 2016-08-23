@@ -8,8 +8,44 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script type="text/javascript" src="http://coach.samesamechina.com/api/v1/js/912e9ed6-7426-49c0-98f2-903fa4bf0d7a/wechat"></script>
     <script type="text/javascript" src="/dist/js/lib/zepto.min.js"></script>
+     <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            max-width: 100%;
+        }
+        .logo{
+            width: 40vw;
+            margin: 0 auto 10vh;
+        }
+        .tips{
+            width: 60vw;
+            margin: 0 auto;
+        }
+
+    </style>
 </head>
 <body>
+<!--Start page-->
+<div class="content">
+    <div class="logo">
+        <img src="/app/images/logo.png" alt=""/>
+    </div>
+    <div class="tips">
+        <img src="/images/card-tips.png" alt=""/>
+    </div>
+</div>
+<!--End page-->
 <script type="text/javascript">
 var cardListJSON = <?php echo json_encode($list);?>;
 setTimeout("showcard()",100);
