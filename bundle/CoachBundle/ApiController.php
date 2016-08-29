@@ -51,7 +51,7 @@ class ApiController extends Controller {
 	public function cardAction() {
 		//600 pKCDxjrwNnpwUXTcyqzi2R3NZRCQ
 		//800 pKCDxjm3GDEKbK19j_SH7VqFAaag
-		$card = array('600'=>'pKCDxjrHzatLP0PggxFclXBwLoyY', '800'=>'pKCDxjgsQGKQogXPFPNNDjbCpv6c');
+		$card = array('600'=>'pKCDxjqJwasTWS2SN0_qpIf4PeCI', '800'=>'pKCDxjjIhV9cz5fOule5tz9hNhgI');
 		//$card = array('600'=>'pGXbRsjjVihQHceLiRMgpFWDkNtU', '800'=>'pGXbRssyzDNSGX7qa6D689Vi_700');
 		//$card = array('600'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ', '800'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ');
 		$UserAPI = new \Lib\UserAPI();
