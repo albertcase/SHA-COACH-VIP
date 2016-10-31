@@ -26,10 +26,10 @@
         <img src="/dist/images/t1.png" id="titleImg" alt=""/>
     </div>
     <div class="slides">
-        <img class="slide current" src="/dist/images/201611-slide/s1.jpg" alt=""/>
-        <img class="slide" src="/dist/images/201611-slide/s2.jpg" alt=""/>
-        <img class="slide" src="/dist/images/201611-slide/s3.jpg" alt=""/>
-        <img class="slide" src="/dist/images/201611-slide/s4.jpg" alt=""/>
+        <img class="slide current" src="/images/201611-slide/s1.jpg" alt=""/>
+        <img class="slide" src="/images/201611-slide/s2.jpg" alt=""/>
+        <img class="slide" src="/images/201611-slide/s3.jpg" alt=""/>
+        <img class="slide" src="/images/201611-slide/s4.jpg" alt=""/>
     </div>
     <div class="t2">
         <img src="" id = "changeImg" alt=""/>
