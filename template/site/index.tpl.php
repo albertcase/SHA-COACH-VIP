@@ -26,10 +26,10 @@
         <img src="/dist/images/t1.png" id="titleImg" alt=""/>
     </div>
     <div class="slides">
-        <img class="slide current" src="/images/201611-slide/s1.jpg" alt=""/>
-        <img class="slide" src="/images/201611-slide/s2.jpg" alt=""/>
-        <img class="slide" src="/images/201611-slide/s3.jpg" alt=""/>
-        <img class="slide" src="/images/201611-slide/s4.jpg" alt=""/>
+        <img class="slide current" src="/images/201702-slide/slide-1.jpg" alt=""/>
+        <img class="slide" src="/images/201702-slide/slide-2.jpg" alt=""/>
+        <img class="slide" src="/images/201702-slide/slide-3.jpg" alt=""/>
+        <img class="slide" src="/images/201702-slide/slide-4.jpg" alt=""/>
     </div>
     <div class="t2">
         <img src="" id = "changeImg" alt=""/>
@@ -44,7 +44,7 @@
         var priceImgEle = $('#changeImg');
         var titleImg = $('#titleImg');
         if (type=='600') {
-            priceImgEle.attr('src',window.location.origin+'/images/t2.png');
+            priceImgEle.attr('src',window.location.origin+'/images/t2-600.png');
             titleImg.attr('src',window.location.origin+'/images/t1.png');
             var enabled =true;
             $('.button').on('click',function(){
