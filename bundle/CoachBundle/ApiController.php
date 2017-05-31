@@ -7,7 +7,7 @@ use Core\Controller;
 class ApiController extends Controller {
 
 	public function testAction() {
-		
+
 		exit;
 	}
 
@@ -42,7 +42,7 @@ class ApiController extends Controller {
 	}
 
 	public function getdataAction() {
-		$data = $GLOBALS['HTTP_RAW_POST_DATA'];	
+		$data = $GLOBALS['HTTP_RAW_POST_DATA'];
 		$data = json_decode($data, true);
 		$databaseapi = new \Lib\DatabaseAPI();
 		$databaseapi->regUser($data['data']['openid'], $data['data']['nickname'], $data['data']['headimgurl']);
@@ -51,7 +51,8 @@ class ApiController extends Controller {
 	public function cardAction() {
 		//600 pKCDxjrwNnpwUXTcyqzi2R3NZRCQ
 		//800 pKCDxjm3GDEKbK19j_SH7VqFAaag
-		$card = array('600'=>'pKCDxjpPGbCkQbYSFbVc9QXtZEp4', '800'=>'pKCDxjjP6WPJPZnUzMMRL6enFaho');
+		$card = array('600'=>'pKCDxjj-oXPVLU3BFjg0j6kiJZHk', '800'=>'pKCDxjqnW-fvmRez79LzMlKgaRFE');
+		// $card = array('600'=>'pKCDxjpPGbCkQbYSFbVc9QXtZEp4', '800'=>'pKCDxjjP6WPJPZnUzMMRL6enFaho'); 2017-05-31
 		//$card = array('600'=>'pGXbRsjjVihQHceLiRMgpFWDkNtU', '800'=>'pGXbRssyzDNSGX7qa6D689Vi_700');
 		//$card = array('600'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ', '800'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ');
 		$UserAPI = new \Lib\UserAPI();
