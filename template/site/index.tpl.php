@@ -28,7 +28,7 @@
     <div class="slides">
         <img class="slide current" src="/images/201706-slide/slide-1.jpg" alt=""/>
         <img class="slide" src="/images/201706-slide/slide-2.jpg" alt=""/>
-        <img class="slide current" src="/images/201706-slide/slide-1.jpg" alt=""/>
+        <img class="slide" src="/images/201706-slide/slide-1.jpg" alt=""/>
        	<img class="slide" src="/images/201706-slide/slide-2.jpg" alt=""/>
     </div>
     <div class="t2">
