@@ -51,8 +51,9 @@ class ApiController extends Controller {
 	public function cardAction() {
 		//600 pKCDxjrwNnpwUXTcyqzi2R3NZRCQ
 		//800 pKCDxjm3GDEKbK19j_SH7VqFAaag
-		$card = array('600'=>'pKCDxjj-oXPVLU3BFjg0j6kiJZHk', '800'=>'pKCDxjqnW-fvmRez79LzMlKgaRFE');
-		// $card = array('600'=>'pKCDxjpPGbCkQbYSFbVc9QXtZEp4', '800'=>'pKCDxjjP6WPJPZnUzMMRL6enFaho'); 2017-05-31
+		$card = array('600'=>'pKCDxjvs_llyYBIrZdFuKyD1Bg3w', '800'=>'pKCDxjhQza5s5dGKPCIjg3FHjEPE');
+//        $card = array('600'=>'pKCDxjj-oXPVLU3BFjg0j6kiJZHk', '800'=>'pKCDxjqnW-fvmRez79LzMlKgaRFE'); 2017-06-30
+        // $card = array('600'=>'pKCDxjpPGbCkQbYSFbVc9QXtZEp4', '800'=>'pKCDxjjP6WPJPZnUzMMRL6enFaho'); 2017-05-31
 		//$card = array('600'=>'pGXbRsjjVihQHceLiRMgpFWDkNtU', '800'=>'pGXbRssyzDNSGX7qa6D689Vi_700');
 		//$card = array('600'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ', '800'=>'pKCDxji6wCVuB38LBgBTx3U2yBoQ');
 		$UserAPI = new \Lib\UserAPI();
