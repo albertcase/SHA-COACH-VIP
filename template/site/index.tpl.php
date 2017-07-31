@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" >
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" type="text/css" href="/dist/css/screen.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/screen.css"/>
     <script>
     var _hmt = _hmt || [];
     (function() {
