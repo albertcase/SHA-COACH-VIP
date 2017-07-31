@@ -128,7 +128,8 @@
                 });
             });
         } else {
-
+            priceImgEle.attr('src',window.location.origin+'/images/t2-600.png');
+            titleImg.attr('src',window.location.origin+'/images/t1.png');
         }
 
 
