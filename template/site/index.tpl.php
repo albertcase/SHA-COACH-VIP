@@ -32,7 +32,16 @@
        	<!--<img class="slide" src="/images/201706-slide/slide-2.jpg" alt=""/>-->
     </div>
     <div class="t2">
-        <!--<img src="" id = "changeImg" alt=""/>-->
+        <p>
+            在这一年中最美好的时节，<br>
+            COACH送来最美好的生日祝福。
+        </p>
+        <p>
+            专享600元生日礼券，<br>
+            持券消费更可获赠冰淇淋券，甜蜜一夏！<br>
+            礼券使用期限：2017/9/30。<br>
+            臻美之礼，臻意为你。
+        </p>
     </div>
     <div class="button">
         <img src="/dist/images/button.png" alt=""/>
