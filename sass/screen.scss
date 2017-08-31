@@ -16,7 +16,7 @@ img{
 }
 
 body{
-  font:0.24rem/1.5 "SimSun",serif;
+  font:0.24rem/1.5  "PingFang SC","Heiti SC",sans-serif;
   color: #000000;
 }
 
@@ -49,8 +49,14 @@ body{
   }
 }
 .t2{
-  @include size(4.15rem,2.09rem);
+  width: 100%;
+  //@include size(4.15rem,2.09rem);
   margin: 0.4rem auto 0.3rem;
+  text-align: center;
+  p{
+    font-size: 0.24rem;
+    margin: 0.2rem 0;
+  }
 }
 .button{
   @include size(2.9rem,0.63rem);

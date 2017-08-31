@@ -32,7 +32,7 @@
        	<!--<img class="slide" src="/images/201706-slide/slide-2.jpg" alt=""/>-->
     </div>
     <div class="t2">
-        <img src="" id = "changeImg" alt=""/>
+        <!--<img src="" id = "changeImg" alt=""/>-->
     </div>
     <div class="button">
         <img src="/dist/images/button.png" alt=""/>
@@ -41,10 +41,12 @@
 <script type="text/javascript">
     var type='<?php echo $type;?>';
     $(document).ready(function() {
-        var priceImgEle = $('#changeImg');
+        var couponDesEle = $('.t2');
         var titleImg = $('#titleImg');
+        var desHtml_600 = '<p>在这一年中最美好的时节，<br>COACH送来最美好的生日祝福。<br> </p> <p> 专享600元生日礼券，<br> 持券消费更可获赠冰淇淋券，甜蜜一夏！<br> 礼券使用期限：2017/9/30。<br> 臻美之礼，臻意为你。</p>';
+        var desHtml_800 = '<p>在这一年中最美好的时节，<br>COACH送来最美好的生日祝福。<br> </p> <p> 专享800元生日礼券，<br> 持券消费更可获赠冰淇淋券，甜蜜一夏！<br> 礼券使用期限：2017/9/30。<br> 臻美之礼，臻意为你。</p>';
         if (type=='600') {
-            priceImgEle.attr('src',window.location.origin+'/images/t2-600.png');
+            couponDesEle.html(desHtml_600);
             titleImg.attr('src',window.location.origin+'/images/t1.png');
             var enabled =true;
             $('.button').on('click',function(){
@@ -86,7 +88,7 @@
                 });
             });
         } else if (type=='800') {
-            priceImgEle.attr('src',window.location.origin+'/images/t2-800.png');
+            couponDesEle.html(desHtml_800);
             titleImg.attr('src',window.location.origin+'/images/t1-800.png');
             var enabled =true;
             $('.button').on('click',function(){

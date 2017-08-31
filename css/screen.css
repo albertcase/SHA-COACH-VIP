@@ -71,7 +71,7 @@ img {
 }
 
 body {
-  font: 0.24rem/1.5 "SimSun",serif;
+  font: 0.24rem/1.5  "PingFang SC","Heiti SC",sans-serif;
   color: #000000;
 }
 
@@ -92,7 +92,7 @@ body {
 .slides {
   position: relative;
   width: 7.5rem;
-  height: 6.01rem;
+  height: 6.16rem;
   margin: 0 auto;
   background: #f7f7f7;
 }
@@ -109,9 +109,13 @@ body {
 }
 
 .t2 {
-  width: 4.15rem;
-  height: 2.09rem;
+  width: 100%;
   margin: 0.4rem auto 0.3rem;
+  text-align: center;
+}
+.t2 p {
+  font-size: 0.24rem;
+  margin: 0.2rem 0;
 }
 
 .button {
