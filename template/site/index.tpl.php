@@ -26,7 +26,7 @@
         <img src="/dist/images/t1.png" id="titleImg" alt=""/>
     </div>
     <div class="slides">
-        <img class="slide current" src="/images/slide.gif" alt=""/>
+        <img class="slide current" src="/images/201709/slide.gif" alt=""/>
         <!--<img class="slide" src="/images/201706-slide/slide-2.jpg" alt=""/>-->
         <!--<img class="slide" src="/images/201706-slide/slide-1.jpg" alt=""/>-->
        	<!--<img class="slide" src="/images/201706-slide/slide-2.jpg" alt=""/>-->
@@ -52,8 +52,8 @@
     $(document).ready(function() {
         var couponDesEle = $('.t2');
         var titleImg = $('#titleImg');
-        var desHtml_600 = '<p>在这一年中最美好的时节，<br>COACH送来最美好的生日祝福。<br> </p> <p> 专享600元生日礼券，<br> 持券消费更可获赠冰淇淋券，甜蜜一夏！<br> 礼券使用期限：2017/9/30。<br> 臻美之礼，臻意为你。</p>';
-        var desHtml_800 = '<p>在这一年中最美好的时节，<br>COACH送来最美好的生日祝福。<br> </p> <p> 专享800元生日礼券，<br> 持券消费更可获赠冰淇淋券，甜蜜一夏！<br> 礼券使用期限：2017/9/30。<br> 臻美之礼，臻意为你。</p>';
+        var desHtml_600 = '<p>在这一年中最美好的时节，<br>COACH送来最美好的生日祝福。<br> </p> <p> 专享600元生日礼券，<br> 礼券使用期限：2017/10/31。<br> 臻美之礼，臻意为你。</p>';
+        var desHtml_800 = '<p>在这一年中最美好的时节，<br>COACH送来最美好的生日祝福。<br> </p> <p> 专享800元生日礼券，<br> 礼券使用期限：2017/10/31。<br> 臻美之礼，臻意为你。</p>';
         if (type=='600') {
             couponDesEle.html(desHtml_600);
             titleImg.attr('src',window.location.origin+'/images/t1.png');
