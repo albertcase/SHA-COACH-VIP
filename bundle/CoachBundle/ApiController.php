@@ -51,7 +51,9 @@ class ApiController extends Controller {
 	public function cardAction() {
 		//600 pKCDxjrwNnpwUXTcyqzi2R3NZRCQ
 		//800 pKCDxjm3GDEKbK19j_SH7VqFAaag
-		$card = array('600'=>'pKCDxjkyPzMD0jAEiqtAKfMHFVtw', '800'=>'pKCDxjtgLstoCPustaWJGgRr96Qo');
+		$card = array('600'=>'pKCDxjmf6cKprcocG_I_WVBx-8h4', '800'=>'pKCDxjnAQrQ3CeUuxfPqIiLWuRJc');
+		//2017-10-30
+		// $card = array('600'=>'pKCDxjkyPzMD0jAEiqtAKfMHFVtw', '800'=>'pKCDxjtgLstoCPustaWJGgRr96Qo');
 		//2017-09-29
         // $card = array('600'=>'pKCDxju7I_sAbTej_yT4giH0a5tQ', '800'=>'pKCDxjoBDqGmeNgr9O2VFp4liQb0');
 //		$card = array('600'=>'pKCDxjuCi-4soPXfuxoB9qHWYuZ0', '800'=>'pKCDxji-2gs9O-bREh-sSlJJ1qSU'); //2017-08-31
